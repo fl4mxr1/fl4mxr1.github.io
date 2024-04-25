@@ -3,8 +3,16 @@ html, body {
 	margin: 0;
 	overflow: hidden;
 	background: rgb(10,10,10);
-	color: white;
+}
+
+* {
 	font-family: "Inter Tight", sans-serif;
+	color: white;
+	box-sizing: border-box;
+}
+
+a.nodec {
+	text-decoration: none;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -28,6 +36,7 @@ div.site-wrapper {
 	display: flex;
 	flex-direction: column;
 	align-items: center;
+	scroll-behavior: smooth;
 }
 
 .noselect {
@@ -74,4 +83,76 @@ div.site-wrapper {
 	width: 60%;
 	max-width: 500px;
 	animation: LogoSineWaveAnim 4s infinite ease-in-out;
+}
+
+.p1-5 {
+	font-size: 1.5rem;
+}
+
+.nav-top {
+	display: flex;
+	flex-direction: row;
+	gap: 7px;
+	margin-bottom: 3rem;
+}
+
+.nav-top .nav-btn {
+	all: unset;
+	background: rgba(255,255,255,0.01);
+	backdrop-filter: blur(3px);
+	height: 100%;
+	overflow: hidden;
+	border: 1px solid rgba(255,255,255,0.2);
+	padding: 5px 10px;
+	border-radius: 7px;
+	cursor: pointer;
+	z-index: 1;
+	transition: outline 0.4s cubic-bezier(0,1,1,1), outline-offset 0.2s cubic-bezier(0,1,1,1), scale 0.1s cubic-bezier(0,1,1,1), translate 0.1s cubic-bezier(0,1,1,1);
+	isolation: isolate;
+	outline: 0px solid rgba(255,255,255,0);
+}
+
+.nav-top .nav-btn:hover {
+	outline: 4px solid white;
+	outline-offset: 3px;
+	z-index: 99;
+	scale: 1.1;
+	translate: 0 -5px;
+}
+
+.nav-top .nav-btn img.icon {
+	height: 190%;
+	position: absolute;
+	top: -30px;
+	left: -20px;
+	rotate: 15deg;
+	z-index: -9;
+	opacity: 0.2;
+	-webkit-mask-image: -webkit-gradient(linear, left top, left bottom, from(black), to(transparent));
+	-webkit-mask-image: linear-gradient(to bottom, black 0%, transparent 100%);
+	mask-image: -webkit-gradient(linear, left top, left bottom, from(black), to(transparent));
+	mask-image: linear-gradient(to bottom, black 0%, transparent 100%);
+}
+
+section.about-me {
+	display: grid; 
+  grid-template-columns: 1fr 1fr 1fr; 
+  grid-template-rows: 1fr 1fr 1fr; 
+  gap: 0px 0px; 
+  grid-template-areas: 
+    "ghj hi hi"
+    "ghj hi hi"
+    "ghj helol helol"; 
+}
+
+section.about-me .am-sec1-grid {
+	grid-area: "ghj";
+}
+
+section.about-me .am-sec2-grid {
+	grid-area: "hi";
+}
+
+section.about-me .am-sec3-grid {
+	grid-area: "helol";
 }
