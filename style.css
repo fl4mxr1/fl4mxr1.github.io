@@ -1,0 +1,76 @@
+@import url('https://fonts.googleapis.com/css2?family=Fredoka:wdth,wght@112.5,300..700&family=Inter+Tight:ital,wght@0,100..900;1,100..900&display=swap');
+html, body {
+	margin: 0;
+	overflow: hidden;
+	background: rgb(10,10,10);
+	color: white;
+	font-family: "Inter Tight", sans-serif;
+}
+
+h1, h2, h3, h4, h5, h6 {
+	font-family: "Fredoka", sans-serif;
+	font-weight: 600;
+	font-variation-settings: 
+		"wdth" 112;
+}
+
+p {
+	font-size: 1.2em;
+}
+
+div.site-wrapper {
+	width: 100vw;
+	height: 100vh;
+	overflow-y: scroll;
+	position: absolute;
+	inset: 0;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.noselect {
+	user-select: none;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+}
+
+@keyframes SiteBGFadeIn {
+	from {
+		opacity: 0;
+	}
+	to {
+		opacity: 1;
+	}
+}
+
+@keyframes LogoSineWaveAnim {
+	from {
+		translate: 0 6px;
+	}
+	50% {
+		translate: 0 -6px;
+	}
+	to {
+		translate: 0 6px;
+	}
+}
+
+.site-bg {
+	opacity: 0;
+	animation: SiteBGFadeIn 1s ease-out forwards;
+	animation-delay: 1s;
+	-webkit-mask-image: -webkit-gradient(linear, left top, left bottom, from(black), to(transparent));
+	-webkit-mask-image: linear-gradient(to bottom, black 0%, transparent 100%);
+	mask-image: -webkit-gradient(linear, left top, left bottom, from(black), to(transparent));
+	mask-image: linear-gradient(to bottom, black 0%, transparent 100%);
+	position: absolute;
+	inset: 0;
+	z-index: -99;
+}
+
+.fl4mxr1logo {
+	width: 40%;
+	max-width: 500px;
+	animation: LogoSineWaveAnim 4s infinite ease-in-out;
+}
