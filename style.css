@@ -107,7 +107,7 @@ div.site-wrapper {
 	border-radius: 7px;
 	cursor: pointer;
 	z-index: 1;
-	transition: outline 0.4s cubic-bezier(0,1,1,1), outline-offset 0.2s cubic-bezier(0,1,1,1), scale 0.1s cubic-bezier(0,1,1,1), translate 0.1s cubic-bezier(0,1,1,1);
+	transition: outline 0.4s cubic-bezier(0,1,1,1), outline-offset 0.2s cubic-bezier(0,1,1,1), scale 0.1s cubic-bezier(0,1,1,1), translate 0.1s cubic-bezier(0,1,1,1), margin 0.1s cubic-bezier(0,1,1,1);
 	isolation: isolate;
 	outline: 0px solid rgba(255,255,255,0);
 }
@@ -118,6 +118,7 @@ div.site-wrapper {
 	z-index: 99;
 	scale: 1.1;
 	translate: 0 -5px;
+	margin-inline: 5px;
 }
 
 .nav-top .nav-btn img.icon {
