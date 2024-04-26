@@ -27,10 +27,15 @@ p {
 	font-size: 1.2em;
 }
 
+p.p1-5 {
+	font-size: 1.5rem;
+}
+
 div.site-wrapper {
 	width: 100vw;
 	height: 100vh;
 	overflow-y: scroll;
+	overflow-x: hidden;
 	position: absolute;
 	inset: 0;
 	display: flex;
@@ -79,31 +84,38 @@ div.site-wrapper {
 	z-index: -99;
 }
 
-.fl4mxr1logo {
+.header {
+	background: red;
+	max-height: unset;
+	height: 100vh;
+	width: 100vw;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+}
+
+.header .fl4mxr1logo {
 	width: 60%;
 	max-width: 500px;
 	animation: LogoSineWaveAnim 4s infinite ease-in-out;
 }
 
-.p1-5 {
-	font-size: 1.5rem;
-}
-
-.nav-top {
+.header .nav-top {
 	display: flex;
 	flex-direction: row;
 	gap: 7px;
 	margin-bottom: 3rem;
 }
 
-.nav-top .nav-btn {
+.header .nav-top .nav-btn {
 	all: unset;
 	background: rgba(255,255,255,0.01);
 	backdrop-filter: blur(3px);
-	height: 100%;
+	height: min-content;
 	overflow: hidden;
 	border: 1px solid rgba(255,255,255,0.2);
-	padding: 5px 10px;
+	padding: 10px 15px;
 	border-radius: 7px;
 	cursor: pointer;
 	z-index: 1;
@@ -112,7 +124,7 @@ div.site-wrapper {
 	outline: 0px solid rgba(255,255,255,0);
 }
 
-.nav-top .nav-btn:hover {
+.header .nav-top .nav-btn:hover {
 	outline: 4px solid white;
 	outline-offset: 3px;
 	z-index: 99;
@@ -121,7 +133,7 @@ div.site-wrapper {
 	margin-inline: 5px;
 }
 
-.nav-top .nav-btn img.icon {
+.header .nav-top .nav-btn img.icon {
 	height: 190%;
 	position: absolute;
 	top: -30px;
