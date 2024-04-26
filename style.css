@@ -8,7 +8,6 @@ html, body {
 * {
 	font-family: "Inter Tight", sans-serif;
 	color: white;
-	box-sizing: border-box;
 }
 
 a.nodec {
@@ -85,14 +84,14 @@ div.site-wrapper {
 }
 
 .header {
-	background: red;
 	max-height: unset;
-	height: 100vh;
+	height: 300px;
 	width: 100vw;
 	display: flex;
 	flex-direction: column;
 	align-items: center;
 	justify-content: center;
+	min-height: 100vh;
 }
 
 .header .fl4mxr1logo {
@@ -112,6 +111,7 @@ div.site-wrapper {
 	all: unset;
 	background: rgba(255,255,255,0.01);
 	backdrop-filter: blur(3px);
+	-webkit-backdrop-filter: blur(3px);
 	height: min-content;
 	overflow: hidden;
 	border: 1px solid rgba(255,255,255,0.2);
@@ -152,20 +152,17 @@ section.about-me {
   grid-template-columns: 1fr 1fr 1fr; 
   grid-template-rows: 1fr 1fr 1fr; 
   gap: 0px 0px; 
-  grid-template-areas: 
-    "ghj hi hi"
-    "ghj hi hi"
-    "ghj helol helol"; 
 }
 
-section.about-me .am-sec1-grid {
-	grid-area: "ghj";
+section.about-me .grid .am-sec1-grid {
+	grid-row-start: 1;
+	grid-row-end: 3;
 }
 
-section.about-me .am-sec2-grid {
-	grid-area: "hi";
+section.about-me .grid .am-sec2-grid {
+	
 }
 
-section.about-me .am-sec3-grid {
-	grid-area: "helol";
+section.about-me .grid .am-sec3-grid {
+	
 }
