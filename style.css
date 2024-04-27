@@ -89,6 +89,35 @@ div.site-wrapper {
 	}
 }
 
+@keyframes bounce {
+	from { transform: translate3d(0, 0, 0);} 
+  to { transform: translate3d(0, -10px, 0);} 
+}
+
+#codinglanguagesitems_tooltip {
+	position: absolute;
+	top: 0;
+	left: 0;
+	background: rgb(20,20,20);
+	padding: 6px;
+	border-radius: 5px;
+	opacity: 1;
+	transition: opacity 0.3s;
+}
+
+#codinglanguagesitems_tooltip[data-hidden="true"] {
+	opacity: 0;
+}
+
+#codinglanguagesitems_tooltip span.arrow {
+	width: 0;
+	height: 0;
+	border-left: 17px solid rgb(20,20,20);
+	border-top: 17px solid transparent;
+	position: absolute;
+	top: -17px;
+}
+
 .site-bg {
 	opacity: 0;
 	animation: SiteBGFadeIn 1s ease-out forwards;
@@ -166,9 +195,37 @@ div.site-wrapper {
 	mask-image: linear-gradient(to bottom, black 0%, transparent 100%);
 }
 
+div#scrolldown-tip {
+	position: fixed;
+	bottom: 10px;
+	left: 50%;
+	translate: -50% 0;
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	animation: bounce 0.5s infinite;
+	animation-direction: alternate-reverse;
+	animation-delay: 1s;
+	opacity: 0.5;
+	transition: opacity 0.2s cubic-bezier(0,1,1,1);
+	pointer-events: none;
+}
+
+div#scrolldown-tip[data-hidden="true"] {
+	opacity: 0;
+}
+
+div#scrolldown-tip img {
+	height: 2rem;
+}
+
+div#scrolldown-tip p {
+	font-family: "Fredoka", sans-serif;
+}
+
 section.about-me .grid {
 	display: grid; 
-  grid-template-columns: 1fr 0.7fr; 
+  grid-template-columns: auto 1.2fr; 
   grid-template-rows: auto 1fr; 
   gap: 0px 0px; 
 	background: rgb(15,15,15);
@@ -186,7 +243,7 @@ section.about-me .grid .am-sec1-grid {
 }
 
 section.about-me .grid .am-sec1-grid img.side-img {
-	width: 100%;
+	width: 250px;
 	height: 450px;
 	object-fit: cover;
 	object-position: 50% 0;
@@ -210,8 +267,19 @@ section.about-me .grid .am-sec3-grid .item {
 	height: 40px;
 	object-fit: contain;
 	transition: scale 0.1s cubic-bezier(0,1,1,1);
+	cursor: help;
 }
 
 section.about-me .grid .am-sec3-grid .item:hover {
 	scale: 1.1;
+}
+
+@media (prefers-reduced-motion) {
+	div#scrolldown-tip {
+		animation: none;
+		transition: none;
+	}
+	.header .fl4mxr1logo {
+		animation: none;
+	}
 }
