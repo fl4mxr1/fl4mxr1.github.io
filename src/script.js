@@ -12,10 +12,12 @@ function updateSelectedCLTItem() {
 		return
 	}
 	codingLanguagesItems_TT.dataset.hidden = false
-	codingLanguagesItems_TT.style.top = `${selectedCLTItem.pageY}px`
-	codingLanguagesItems_TT.style.left = `${selectedCLTItem.pageX}px`
+	let boundingClient = selectedCLTItem.getBoundingClientRect()
+	codingLanguagesItems_TT.style.top = `${boundingClient.top}px`
+	codingLanguagesItems_TT.style.left = `${boundingClient.left}px`
+	console.log(selectedCLTItem)
 }
-updateSelectedCLTItem()
+setInterval(updateSelectedCLTItem, 1);
 
 let io = new IntersectionObserver((h) => {
 	scrolldownTip.dataset.hidden = h[0].isIntersecting
@@ -25,6 +27,5 @@ io.observe(pastTheHdr)
 cltItems.forEach(el => {
 	el.addEventListener("click", () => {
 		selectedCLTItem = el
-		updateSelectedCLTItem()
 	})
 });
