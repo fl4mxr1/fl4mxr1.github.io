@@ -5,11 +5,27 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel="stylesheet" href="style.css">
 	<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+	<script src="https://unpkg.com/twemoji@latest/dist/twemoji.min.js" crossorigin="anonymous"></script>
+	<script>
+		window.onload = function() {    
+			// Parses the document body and    
+			// inserts <img> tags in place of Unicode Emojis    
+			twemoji.parse(document.body, 
+			{folder: 'svg', ext: '.svg'}) // This is to specify to Twemoji to use SVGs and not PNGs
+
+			const emojis = document.getElementsByClassName(".emoji")
+		}
+	</script>
 	<script src="src/matrixBG.js" defer></script>
+	<script src="src/script.js"></script>
 	<title>fl4mxr1</title>
 </head>
 <body>
 	<div class="site-wrapper">
+		<div id="codinglanguagesitems_tooltip"></div>
+		<div class="scrolldown-tip">
+			<p>scroll down !!</p>
+		</div>
 		<canvas id="c" class="site-bg noselect" width="99999"></canvas>
 		<div class="header">
 			<img src="src/img/fl4mxr1logoexpanded.svg" alt="ffg" class="fl4mxr1logo noselect" draggable="false">
@@ -32,9 +48,19 @@
 		<section class="about-me">
 			<h1 id="header_anchor_aboutme">ABOUT ME</h1>
 			<div class="grid">
-				<img src="src/img/flourmixer_nobg.png" alt="its me flour mixer !!!1!" class="side-img am-sec1-grid">
-				<p class="am-sec2-grid">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatum, enim officia. Saepe animi nulla consequatur necessitatibus? Enim quod earum quam dolore perferendis laboriosam placeat cumque dignissimos quae doloremque inventore, dicta aperiam tempora repudiandae nam impedit explicabo necessitatibus excepturi aut provident? Minima similique repellat, atque ex explicabo enim veritatis eligendi quidem.</p>
-				<p class="am-sec3-grid">fdfdfd</p>
+				<div class="am-sec1-grid">
+					<img src="src/img/flourmixer_nobg.png" alt="its me flour mixer !!!1!" class="side-img">
+					<p class="p0-5">this art up here ⬆️ was made by <a href="https://tiktok.com/@mitz.sy">@mitz.sy</a></p>
+				</div>
+				<p class="am-sec2-grid">i am a young developer from sweden and thailand !! 🇸🇪 🇹🇭<br>i am self-taught and i know a lot of coding languages, such as:</p>
+				<div class="am-sec3-grid">
+					<img src="https://img.icons8.com/color/48/html-5--v1.png" alt="html" class="item">
+					<img src="https://img.icons8.com/color/48/css3.png" alt="css" class="item">
+					<img src="https://img.icons8.com/color/48/javascript--v1.png" alt="javascript" class="item">
+					<img src="src/img/robloxstudio.png" alt="luau" class="item">
+					<img src="src/img/lua.png" alt="lua" class="item">
+					<img src="https://img.icons8.com/color/48/python--v1.png" alt="python" class="item">
+				</div>
 			</div>
 		</section>
 
