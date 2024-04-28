@@ -19,6 +19,9 @@ h1, h2, h3, h4, h5, h6 {
 	font-weight: 600;
 	font-variation-settings: 
 		"wdth" 112;
+}
+
+.text-align-center {
 	text-align: center;
 }
 
@@ -103,8 +106,9 @@ div.site-wrapper {
 	border-radius: 5px;
 	opacity: 1;
 	transition: opacity 0.3s;
-	translate: -50% 30%;
+	translate: -100% 0;
 	filter: drop-shadow(0 0 3px rgba(0,0,0,0.5));
+	z-index: 500;
 }
 
 #codinglanguagesitems_tooltip[data-hidden="true"] {
@@ -125,6 +129,18 @@ div.site-wrapper {
 	display: grid;
 	grid-template-columns: 1fr auto;
 	grid-template-rows: 1fr auto;
+	width: 310px;
+}
+
+#codinglanguagesitems_tooltip .tooltip-image {
+	width: 80px;
+}
+
+#codinglanguagesitems_tooltip .tooltip-wiki-link {
+	grid-column-start: 2;
+	font-family: "Fredoka", sans-serif;
+	opacity: 0.5;
+	margin-bottom: 5px;
 }
 
 .site-bg {
@@ -232,6 +248,10 @@ div#scrolldown-tip p {
 	font-family: "Fredoka", sans-serif;
 }
 
+section.about-me {
+	margin-inline: 50px;
+}
+
 section.about-me .grid {
 	display: grid; 
   grid-template-columns: auto 1.2fr; 
@@ -242,6 +262,7 @@ section.about-me .grid {
 	border: 1px solid rgba(255,255,255,0.1);
 	padding: 10px 25px;
 	align-items: start;
+	max-width: 650px;
 }
 
 section.about-me .grid .am-sec1-grid {
