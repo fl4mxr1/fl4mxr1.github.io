@@ -247,6 +247,10 @@ div#scrolldown-tip img {
 
 div#scrolldown-tip p {
 	font-family: "Fredoka", sans-serif;
+	font-weight: 600;
+	width: min-content;
+	text-align: center;
+	text-wrap: nowrap;
 }
 
 section.about-me {
