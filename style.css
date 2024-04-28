@@ -279,6 +279,15 @@ section.about-me .grid .am-sec1-grid img.side-img {
 	object-position: 50% 0;
 }
 
+section.about-me .grid .am-sec1-grid p {
+	opacity: 0.5
+}
+
+section.about-me .grid .am-sec1-grid p > a {
+	font-weight: 500;
+	font-style: italic;
+}
+
 section.about-me .grid .am-sec2-grid {
 	grid-row-start: 1;
 }
@@ -302,6 +311,26 @@ section.about-me .grid .am-sec3-grid .item {
 
 section.about-me .grid .am-sec3-grid .item:hover {
 	scale: 1.1;
+}
+
+footer.footer {
+	padding: 10px;
+	box-sizing: border-box;
+	width: 100vw;
+	height: min-content;
+	display: flex;
+	flex-direction: column;
+	flex-wrap: wrap;
+	border-top: 1px solid rgba(255,255,255,.04);
+	margin-top: 20px;
+}
+
+footer.footer p {
+	opacity: 0.5;
+}
+
+footer.footer img {
+	width: 100px;
 }
 
 @media (prefers-reduced-motion) {
