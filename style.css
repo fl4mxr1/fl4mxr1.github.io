@@ -5,22 +5,42 @@ html, body {
 	background: rgb(10,10,10);
 }
 
-* {
+*:not(i, b) {
 	font-family: "Inter Tight", sans-serif;
 	color: white;
+}
+
+*:focus {
+	outline: 4px solid white;
+	outline-offset: 3px;
 }
 
 a.nodec {
 	text-decoration: none;
 }
 
+a {
+	transition: translate 0.5s cubic-bezier(0,1,1,1);
+	translate: 0 0;
+}
+
+a:hover {
+	translate: 0 10px;
+}
+
 .newtab-link {
 	cursor: pointer;
 	text-decoration: underline;
+	transition: translate 0.5s cubic-bezier(0,1,1,1);
+	translate: 0 0;
 }
 
 .newtab-link.nodec {
 	text-decoration: none;
+}
+
+.newtab-link:hover {
+	translate: 0 10px;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -28,6 +48,10 @@ h1, h2, h3, h4, h5, h6 {
 	font-weight: 600;
 	font-variation-settings: 
 		"wdth" 112;
+}
+
+h1 {
+	font-size: 2rem;
 }
 
 .text-align-center {
@@ -59,6 +83,10 @@ p.p0-5>img.emoji {
 p.p1-5>img.emoji {
 	height: 1.5rem;
   pointer-events: none;
+}
+
+section {
+	margin-block: 2rem;
 }
 
 div.site-wrapper {
@@ -224,10 +252,6 @@ section.about-me .grid {
 	display: grid; 
   grid-template-columns: auto 1.2fr; 
   grid-template-rows: auto 1fr; 
-  gap: 0px 0px; 
-	background: rgb(15,15,15);
-	border-radius: 7px;
-	border: 1px solid rgba(255,255,255,0.1);
 	padding: 10px 25px;
 	align-items: start;
 	max-width: 650px;
@@ -245,6 +269,10 @@ section.about-me .grid .am-sec1-grid img.side-img {
 	height: 450px;
 	object-fit: cover;
 	object-position: 50% 0;
+	-webkit-mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 1) 60%, rgba(0, 0, 0, 0) 90%);
+	-webkit-mask-size: 100% 100%;
+	-webkit-mask-repeat: no-repeat;
+	-webkit-mask-position: top;
 }
 
 section.about-me .grid .am-sec1-grid p {
@@ -276,7 +304,6 @@ section.about-me .grid .am-sec3-grid .item {
 	height: 40px;
 	object-fit: contain;
 	transition: scale 0.1s cubic-bezier(0,1,1,1);
-	cursor: help;
 }
 
 section.about-me .grid .am-sec3-grid .item:hover {
@@ -286,26 +313,77 @@ section.about-me .grid .am-sec3-grid .item:hover {
 section.socials .flex {
 	display: flex;
 	flex-direction: column;
+	align-items: center;
 	gap: 10px;
+}
+
+@keyframes SocialsSection_ButtonShimmer {
+	from {
+		left: -50%;
+	}
+	to {
+		left: 150%;
+	}
 }
 
 section.socials .flex .item {
 	width: min-content;
-	padding: 7px 10px;
+	padding: 14px 20px;
 	display: flex;
 	flex-direction: row;
-	gap: 6px;
+	align-items: center;
+	gap: 20px;
 	background: rgb(15,15,15);
 	border: 1px solid rgba(255,255,255,0.1);
 	border-radius: 6px;
+	cursor: pointer;
+	transition: scale 0.3s cubic-bezier(0,1,1,1), outline 0.6s cubic-bezier(0,1,1,1), outline-offset 0.6s cubic-bezier(0,1,1,1);
+	position: relative;
+	overflow: hidden;
+	outline: 0px solid rgba(255,255,255,0);
+}
+
+section.socials .flex .item div.shimmer {
+	height: 100%;
+	width: 30%;
+	position: absolute;
+	top: 0;
+	left: -50%;
+	background: linear-gradient(90deg, rgba(240,249,255,1) 0%, rgba(255,255,255,0) 0%, rgba(255,255,255,1) 25%, rgba(255,255,255,1) 75%, rgba(240,249,255,0) 100%);
+	opacity: 0.2;
+	transform: skewX(-45deg);
+	transition: opacity 1s;
+}
+
+section.socials .flex .item:hover {
+	scale: 1.1;
+	outline: 4px solid white;
+	outline-offset: 3px;
+	isolation: isolate;
+	z-index: 99;
+}
+
+section.socials .flex .item:hover div.shimmer {
+	animation: SocialsSection_ButtonShimmer 1s cubic-bezier(0,0,.3,1) forwards;
+	opacity: 0;
+}
+
+section.socials .flex .item:focus {
+	outline: 4px solid white;
 }
 
 section.socials .flex .item .social-img {
 	height: 40px;
+	width: 40px;
+	object-fit: contain;
 }
 
 section.socials .flex .item .text {
 	text-wrap: nowrap;
+	font-family: "Fredoka";
+	font-size: 1.3rem;
+	margin: 0;
+	padding: 0;
 }
 
 footer.footer {
@@ -329,11 +407,8 @@ footer.footer img {
 }
 
 @media (prefers-reduced-motion) {
-	div#scrolldown-tip {
+	*:not(.animate-anyway) {
 		animation: none;
 		transition: none;
-	}
-	.header .fl4mxr1logo {
-		animation: none;
 	}
 }
