@@ -14,6 +14,15 @@ a.nodec {
 	text-decoration: none;
 }
 
+.newtab-link {
+	cursor: pointer;
+	text-decoration: underline;
+}
+
+.newtab-link.nodec {
+	text-decoration: none;
+}
+
 h1, h2, h3, h4, h5, h6 {
 	font-family: "Fredoka", sans-serif;
 	font-weight: 600;
@@ -239,12 +248,14 @@ section.about-me .grid .am-sec1-grid img.side-img {
 }
 
 section.about-me .grid .am-sec1-grid p {
-	opacity: 0.5
+	opacity: 0.5;
+	font-family: "Fredoka", sans-serif;
 }
 
-section.about-me .grid .am-sec1-grid p > a {
+section.about-me .grid .am-sec1-grid p > span.newtab-link {
 	font-weight: 500;
 	font-style: italic;
+	font-family: "Fredoka", sans-serif;
 }
 
 section.about-me .grid .am-sec2-grid {
@@ -272,16 +283,41 @@ section.about-me .grid .am-sec3-grid .item:hover {
 	scale: 1.1;
 }
 
+section.socials .flex {
+	display: flex;
+	flex-direction: column;
+	gap: 10px;
+}
+
+section.socials .flex .item {
+	width: min-content;
+	padding: 7px 10px;
+	display: flex;
+	flex-direction: row;
+	gap: 6px;
+	background: rgb(15,15,15);
+	border: 1px solid rgba(255,255,255,0.1);
+	border-radius: 6px;
+}
+
+section.socials .flex .item .social-img {
+	height: 40px;
+}
+
+section.socials .flex .item .text {
+	text-wrap: nowrap;
+}
+
 footer.footer {
-	padding: 10px;
+	padding: 20px;
 	box-sizing: border-box;
 	width: 100vw;
-	height: min-content;
+	height: 600px;
 	display: flex;
 	flex-direction: column;
 	flex-wrap: wrap;
 	border-top: 1px solid rgba(255,255,255,.04);
-	margin-top: 20px;
+	margin-top: 10vh;
 }
 
 footer.footer p {
@@ -289,7 +325,7 @@ footer.footer p {
 }
 
 footer.footer img {
-	width: 100px;
+	width: 150px;
 }
 
 @media (prefers-reduced-motion) {
