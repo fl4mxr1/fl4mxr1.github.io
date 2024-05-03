@@ -1,0 +1,112 @@
+@import url('https://fonts.googleapis.com/css2?family=Fredoka:wdth,wght@112.5,300..700&family=Inter+Tight:ital,wght@0,100..900;1,100..900&display=swap');
+html, body {
+	margin: 0;
+	overflow: hidden;
+	background: rgb(10,10,10);
+}
+
+*:not(i, b) {
+	font-family: "Inter Tight", sans-serif;
+	color: white;
+}
+
+*:focus {
+	outline: 4px solid white;
+	outline-offset: 3px;
+}
+
+a.nodec {
+	text-decoration: none;
+}
+
+a {
+	transition: translate 0.5s cubic-bezier(0,1,1,1);
+	translate: 0 0;
+}
+
+a:hover {
+	translate: 0 10px;
+}
+
+.newtab-link {
+	cursor: pointer;
+	text-decoration: underline;
+	transition: translate 0.5s cubic-bezier(0,1,1,1), scale 0.5s cubic-bezier(0,1,1,1);
+	translate: 0 0;
+	display: inline-block;
+}
+
+.newtab-link.nodec {
+	text-decoration: none;
+}
+
+.newtab-link:hover {
+	translate: 0 -5px;
+	scale: 1.05;
+}
+
+h1, h2, h3, h4, h5, h6 {
+	font-family: "Fredoka", sans-serif;
+	font-weight: 600;
+	font-variation-settings: 
+		"wdth" 112;
+}
+
+h1 {
+	font-size: 2rem;
+}
+
+.text-align-center {
+	text-align: center;
+}
+
+p {
+	font-size: 1.2em;
+}
+
+p.p1-5 {
+	font-size: 1.5rem;
+}
+
+p.p0-5 {
+	font-size: 0.9rem;
+}
+
+img.emoji {
+	height: 1.2rem;
+  pointer-events: none;
+}
+
+p.p0-5>img.emoji {
+	height: 0.9rem;
+  pointer-events: none;
+}
+
+p.p1-5>img.emoji {
+	height: 1.5rem;
+  pointer-events: none;
+}
+
+section {
+	margin-block: 2rem;
+}
+
+div.site-wrapper {
+	width: 100vw;
+	height: 100dvh;
+	overflow-y: scroll;
+	overflow-x: hidden;
+	position: absolute;
+	inset: 0;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	scroll-behavior: smooth;
+	transition: height 0.2s cubic-bezier(0,1,1,1);
+}
+
+.noselect {
+	user-select: none;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+}
