@@ -46,8 +46,8 @@ a:hover {
 }
 
 h1, h2, h3, h4, h5, h6 {
-	font-family: "Fredoka", sans-serif;
-	font-weight: 600;
+	font-family: "Fredoka", sans-serif !important;
+	font-weight: 600 !important;
 	font-variation-settings: 
 		"wdth" 112;
 }
@@ -61,29 +61,29 @@ h1 {
 }
 
 p {
-	font-size: 1.2em;
+	font-size: 1.2em !important;
 }
 
 p.p1-5 {
-	font-size: 1.5rem;
+	font-size: 1.5em !important;
 }
 
 p.p0-5 {
-	font-size: 0.9rem;
+	font-size: 0.9em !important;
 }
 
 img.emoji {
-	height: 1.2rem;
+	height: 1.2em;
   pointer-events: none;
 }
 
 p.p0-5>img.emoji {
-	height: 0.9rem;
+	height: 0.9em;
   pointer-events: none;
 }
 
 p.p1-5>img.emoji {
-	height: 1.5rem;
+	height: 1.5em;
   pointer-events: none;
 }
 
@@ -235,7 +235,7 @@ div#scrolldown-tip[data-hidden="true"] {
 }
 
 div#scrolldown-tip img {
-	height: 2rem;
+	height: 2em;
 }
 
 div#scrolldown-tip p {
@@ -244,6 +244,7 @@ div#scrolldown-tip p {
 	width: min-content;
 	text-align: center;
 	text-wrap: nowrap;
+	margin: 0;
 }
 
 section.about-me {
@@ -384,7 +385,7 @@ section.socials .flex .item .social-img {
 section.socials .flex .item .text {
 	text-wrap: nowrap;
 	font-family: "Fredoka";
-	font-size: 1.3rem;
+	font-size: 1.3em;
 	margin: 0;
 	padding: 0;
 	transition: font-size 0.3s cubic-bezier(0,1,1,1);
@@ -392,7 +393,7 @@ section.socials .flex .item .text {
 
 @media (max-width: 450px) {
 	section.socials .flex .item .text {
-		font-size: 1.1rem;
+		font-size: 1.1em;
 	}
 	section.socials .flex .item .social-img {
 		width: 35px;
@@ -401,16 +402,7 @@ section.socials .flex .item .text {
 }
 
 section.projects .proj-mygames {
-	display: flex;
-	flex-direction: row;
-	justify-content: center;
-	gap: 10px;
-	flex-wrap: nowrap;
-	width: min-content;
-	max-width: 100vw;
 	height: 300px;
-	overflow-x: scroll;
-	overflow-y: hidden;
 }
 
 section.projects .proj-mygames .item {
@@ -420,7 +412,6 @@ section.projects .proj-mygames .item {
 	position: relative;
 	border-radius: 7px;
 	overflow: hidden;
-	flex: none;
 }
 
 @media (max-width: 520px) {
@@ -505,6 +496,31 @@ footer.footer p {
 
 footer.footer img {
 	width: 150px;
+}
+
+.carousel .carousel-inner .item {
+	height: 200px;
+	width: 200px;
+	background: red;
+}
+
+.carousel .carousel-indicators {
+	bottom: -40px;
+}
+
+.carousel .carousel-indicators li {
+	transition: width 0.2s ease, translate 0.2s ease, background 0.2s ease;
+	height: 7px;
+	border: none;
+}
+
+.carousel .carousel-indicators li:not(.active) {
+	background: rgba(255,255,255,0.5);
+}
+
+.carousel .carousel-indicators li.active {
+	width: 20px;
+	translate: 0 -2px;
 }
 
 @media (prefers-reduced-motion) {
