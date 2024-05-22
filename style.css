@@ -46,8 +46,8 @@ a:hover {
 }
 
 h1, h2, h3, h4, h5, h6 {
-	font-family: "Fredoka", sans-serif !important;
-	font-weight: 600 !important;
+	font-family: "Fredoka", sans-serif;
+	font-weight: 600;
 	font-variation-settings: 
 		"wdth" 112;
 }
@@ -61,29 +61,29 @@ h1 {
 }
 
 p {
-	font-size: 1.2em !important;
+	font-size: 1.2rem ;
 }
 
 p.p1-5 {
-	font-size: 1.5em !important;
+	font-size: 1.5rem ;
 }
 
 p.p0-5 {
-	font-size: 0.9em !important;
+	font-size: 0.9rem ;
 }
 
 img.emoji {
-	height: 1.2em;
+	height: 1.2rem;
   pointer-events: none;
 }
 
 p.p0-5>img.emoji {
-	height: 0.9em;
+	height: 0.9rem;
   pointer-events: none;
 }
 
 p.p1-5>img.emoji {
-	height: 1.5em;
+	height: 1.5rem;
   pointer-events: none;
 }
 
@@ -385,7 +385,7 @@ section.socials .flex .item .social-img {
 section.socials .flex .item .text {
 	text-wrap: nowrap;
 	font-family: "Fredoka";
-	font-size: 1.3em;
+	font-size: 1.3rem;
 	margin: 0;
 	padding: 0;
 	transition: font-size 0.3s cubic-bezier(0,1,1,1);
@@ -393,7 +393,7 @@ section.socials .flex .item .text {
 
 @media (max-width: 450px) {
 	section.socials .flex .item .text {
-		font-size: 1.1em;
+		font-size: 1.1rem;
 	}
 	section.socials .flex .item .social-img {
 		width: 35px;
@@ -402,25 +402,23 @@ section.socials .flex .item .text {
 }
 
 section.projects .proj-mygames {
+	width: 500px;
 	height: 300px;
 }
 
-section.projects .proj-mygames .item {
-	width: 500px;
-	height: 300px;
+section.projects .proj-mygames .el-carousel-inner .el-carousel-card {
 	background: rgb(15,15,15);
-	position: relative;
 	border-radius: 7px;
 	overflow: hidden;
 }
 
-@media (max-width: 520px) {
-	section.projects .proj-mygames .item {
+/* @media (max-width: 520px) {
+	section.projects .proj-mygames .el-carousel-inner .el-carousel-card {
 		margin-inline: 10px;
 	}
-}
+} */
 
-section.projects .proj-mygames .item .game-thumbnail {
+section.projects .proj-mygames .el-carousel-inner .el-carousel-card .game-thumbnail {
 	position: relative;
 	top: 0;
 	left: 0;
@@ -434,7 +432,7 @@ section.projects .proj-mygames .item .game-thumbnail {
 	-webkit-mask-position: top;
 }
 
-section.projects .proj-mygames .item .btm {
+section.projects .proj-mygames .el-carousel-inner .el-carousel-card .btm {
 	position: absolute;
 	bottom: 15px;
 	padding-inline: 15px;
@@ -447,11 +445,11 @@ section.projects .proj-mygames .item .btm {
 	gap: 15px;
 }
 
-section.projects .proj-mygames .item .btm .game-name {
+section.projects .proj-mygames .el-carousel-inner .el-carousel-card .btm .game-name {
 	height: 250%;
 }
 
-section.projects .proj-mygames .item .btm .game-info {
+section.projects .proj-mygames .el-carousel-inner .el-carousel-card .btm .game-info {
 	margin-left: auto;
 	margin-block: auto;
 	height: 1.7rem;
@@ -459,7 +457,7 @@ section.projects .proj-mygames .item .btm .game-info {
 	opacity: 0.7;
 }
 
-section.projects .proj-mygames .item .btm .game-play {
+section.projects .proj-mygames .el-carousel-inner .el-carousel-card .btm .game-play {
 	all: unset;
 	padding: 10px 15px;
 	background: rgb(14, 194, 83);
@@ -472,7 +470,7 @@ section.projects .proj-mygames .item .btm .game-play {
 	border-radius: 5px;
 }
 
-section.projects .proj-mygames .item .btm .game-play img {
+section.projects .proj-mygames .el-carousel-inner .el-carousel-card .btm .game-play img {
 	height: 1.2rem;
 }
 
