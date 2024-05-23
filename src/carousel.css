@@ -3,6 +3,7 @@ div.el-carousel {
 	height: 250px;
 	min-height: 250px;
 	position: relative;
+	transition: scale 0.5s ease;
 }
 
 div.el-carousel .el-carousel-inner {
@@ -84,4 +85,15 @@ div.el-carousel-controls button.el-carousel-control-p {
 div.el-carousel-controls button.el-carousel-control-n {
 	top: 50%;
 	right: -60px;
+}
+
+@media (max-width: 630px) {
+	div.el-carousel {
+		scale: 0.6;
+	}
+	div.el-carousel-controls button.el-carousel-control-p img, 
+	div.el-carousel-controls button.el-carousel-control-n img {
+		height: 70px;
+		width: 70px;
+	}
 }
