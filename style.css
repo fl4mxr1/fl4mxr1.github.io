@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Fredoka:wdth,wght@112.5,300..700&family=Inter+Tight:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Reddit+Mono:wght@200..900&family=Reddit+Sans:ital,wght@0,200..900;1,200..900&display=swap');
 html, body {
 	margin: 0;
 	overflow: hidden;
@@ -6,7 +7,7 @@ html, body {
 }
 
 *:not(i, b) {
-	font-family: "Inter Tight", sans-serif;
+	font-family: "Reddit Sans", sans-serif;
 	color: white;
 }
 
