@@ -1,5 +1,3 @@
-@import url('https://fonts.googleapis.com/css2?family=Fredoka:wdth,wght@112.5,300..700&family=Inter+Tight:ital,wght@0,100..900;1,100..900&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Reddit+Mono:wght@200..900&family=Reddit+Sans:ital,wght@0,200..900;1,200..900&display=swap');
 html, body {
 	margin: 0;
 	overflow: hidden;
@@ -7,7 +5,7 @@ html, body {
 }
 
 *:not(i, b) {
-	font-family: "Reddit Sans", sans-serif;
+	font-family: "Be Vietnam Pro", sans-serif;
 	color: white;
 }
 
@@ -49,8 +47,7 @@ a:hover {
 h1, h2, h3, h4, h5, h6 {
 	font-family: "Fredoka", sans-serif;
 	font-weight: 600;
-	font-variation-settings: 
-		"wdth" 112;
+	font-stretch: semi-expanded;
 }
 
 h1 {
@@ -65,11 +62,11 @@ p {
 	font-size: 1.2rem ;
 }
 
-p.p1-5 {
+.p1-5 {
 	font-size: 1.5rem ;
 }
 
-p.p0-5 {
+.p0-5 {
 	font-size: 0.9rem ;
 }
 
@@ -78,14 +75,18 @@ img.emoji {
   pointer-events: none;
 }
 
-p.p0-5>img.emoji {
+.p0-5>img.emoji {
 	height: 0.9rem;
   pointer-events: none;
 }
 
-p.p1-5>img.emoji {
+.p1-5>img.emoji {
 	height: 1.5rem;
   pointer-events: none;
+}
+
+.secondary-text {
+	color: rgb(200,200,200)
 }
 
 section {
@@ -159,7 +160,7 @@ div.site-wrapper {
 	flex-direction: column;
 	align-items: center;
 	justify-content: center;
-	min-height: 100vh;
+	min-height: 90vh;
 }
 
 .header .fl4mxr1logo {
@@ -252,66 +253,111 @@ section.about-me {
 	margin-inline: 50px;
 }
 
-section.about-me .grid {
-	display: grid; 
-  grid-template-columns: auto 1.2fr; 
-  grid-template-rows: auto 1fr; 
-	padding: 10px 25px;
-	align-items: start;
-	max-width: 650px;
+section.about-me {
+	padding: 5px 10px;
+	background: rgb(15,15,15);
+	border: 1px solid rgba(255,255,255,0.1);
+	border-radius: 10px;
+	width: 700px;
+	min-height: 350px;
 }
 
-section.about-me .grid .am-sec1-grid {
-	grid-row-start: 1;
-	grid-row-end: 3;
+section.about-me .flex-container {
+	width: 100%;
+	height: 100%;
 	display: flex;
-	flex-direction: column;
+	flex-direction: row;
 }
 
-section.about-me .grid .am-sec1-grid img.side-img {
-	width: 250px;
-	height: 450px;
-	object-fit: cover;
-	object-position: 50% 0;
+section.about-me .flex-container .sect1 {
+	width: 30%;
+	height: 100%;
+	position: relative;
+}
+
+section.about-me .flex-container .sect1 h1 {
+	margin: 0;
+	position: absolute;
+	left: 5%;
+	translate: 0 -60%;
+	text-wrap: nowrap;
+}
+
+section.about-me .flex-container .sect1 .bust-img {
+	width: 100%;
+	height: 100%;
 	-webkit-mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 1) 60%, rgba(0, 0, 0, 0) 90%);
 	-webkit-mask-size: 100% 100%;
 	-webkit-mask-repeat: no-repeat;
 	-webkit-mask-position: top;
+	object-fit: cover;
+	object-position: right bottom;
 }
 
-section.about-me .grid .am-sec1-grid p {
-	opacity: 0.5;
+section.about-me .flex-container .sect1 .name-text {
+	position: absolute;
+	bottom: 5px;
+	left: 0;
+	filter: drop-shadow(0 0 3px rgba(0,0,0,1))
+}
+
+section.about-me .flex-container .sect1 .name-text .big {
+	font-size: 2.5rem;
+	text-wrap: nowrap;
+	margin: 0;
 	font-family: "Fredoka", sans-serif;
+	font-weight: 600;
+	font-stretch: condensed;
 }
 
-section.about-me .grid .am-sec1-grid p > span.newtab-link {
-	font-weight: 500;
-	font-style: italic;
-	font-family: "Fredoka", sans-serif;
+section.about-me .flex-container .sect1 .name-text .smaller {
+	margin: 0;
+	font-size: 1rem;
+	font-weight: 700;
+	color: rgb(200,200,200);
+	font-family: "Be Vietnam Pro", sans-serif;
 }
 
-section.about-me .grid .am-sec2-grid {
-	grid-row-start: 1;
+section.about-me .flex-container .sect1 .tinyguy-img {
+	position: absolute;
+	bottom: 0;
+	right: 0;
+	height: 50%;
+	filter: drop-shadow(0 0 2px rgba(0,0,0,0.5))
 }
 
-section.about-me .grid .am-sec3-grid {
-	grid-row-start: 2;
-	grid-row-end: 3;
+section.about-me .flex-container .sect2 {
+	width: 70%;
+	height: 100%;
+	padding-block: 10px 30px;
+	box-sizing: border-box;
+}
+
+section.about-me .flex-container .sect2 p {
+	margin-block: 5px;
+}
+
+section.about-me .flex-container .sect2 .abm-countries {
 	display: flex;
 	flex-direction: row;
-	flex-wrap: wrap;
-	gap: 7px;
+	align-items: flex-end;
+	gap: 10px;
 }
 
-section.about-me .grid .am-sec3-grid .item {
-	width: 40px;
-	height: 40px;
-	object-fit: contain;
-	transition: scale 0.1s cubic-bezier(0,1,1,1);
+section.about-me .flex-container .sect2 .abm-countries img {
+	height: 35px;
 }
 
-section.about-me .grid .am-sec3-grid .item:hover {
-	scale: 1.1;
+section.about-me .flex-container .sect2 .abm-cl {
+	padding: 5px;
+	background: rgb(25,25,25);
+	border-radius: 5px;
+	display: inline-flex;
+	gap: 5px;
+	align-items: center;
+	width: min-content;
+	text-wrap: nowrap;
+	margin-top: 5px;
 }
 
 section.socials .flex {
