@@ -357,7 +357,7 @@ section.about-me .flex-container .sect2 .abm-cl {
 	align-items: center;
 	width: min-content;
 	text-wrap: nowrap;
-	margin-top: 5px;
+	margin-block: 5px;
 }
 
 section.socials .flex {
