@@ -47,7 +47,7 @@ a:hover {
 h1, h2, h3, h4, h5, h6 {
 	font-family: "Fredoka", sans-serif;
 	font-weight: 600;
-	font-stretch: semi-expanded;
+	font-stretch: normal;
 }
 
 h1 {
@@ -70,6 +70,11 @@ p {
 	font-size: 0.9rem ;
 }
 
+.p0-3 {
+	font-size: 0.8rem ;
+}
+
+
 img.emoji {
 	height: 1.2rem;
   pointer-events: none;
@@ -85,8 +90,17 @@ img.emoji {
   pointer-events: none;
 }
 
+.p0-3>img.emoji {
+	height: 0.8rem;
+  pointer-events: none;
+}
+
 .secondary-text {
 	color: rgb(200,200,200)
+}
+
+.tertiary-text {
+	color: rgb(150,150,150)
 }
 
 section {
@@ -167,6 +181,12 @@ div.site-wrapper {
 	width: 60%;
 	max-width: 500px;
 	animation: LogoSineWaveAnim 4s infinite ease-in-out;
+}
+
+.header h1 {
+	font-size: 2.5rem;
+	margin: 0;
+	font-stretch: semi-expanded;
 }
 
 .header .nav-top {
@@ -251,15 +271,12 @@ div#scrolldown-tip p {
 
 section.about-me {
 	margin-inline: 50px;
-}
-
-section.about-me {
 	padding: 5px 10px;
-	background: rgb(15,15,15);
-	border: 1px solid rgba(255,255,255,0.1);
+	background: rgb(13,13,13);
 	border-radius: 10px;
 	width: 700px;
 	min-height: 350px;
+	transition: width 0.3s ease, min-height 0.3s ease;
 }
 
 section.about-me .flex-container {
@@ -278,7 +295,7 @@ section.about-me .flex-container .sect1 {
 section.about-me .flex-container .sect1 h1 {
 	margin: 0;
 	position: absolute;
-	left: 5%;
+	left: 0;
 	translate: 0 -60%;
 	text-wrap: nowrap;
 }
@@ -298,7 +315,9 @@ section.about-me .flex-container .sect1 .name-text {
 	position: absolute;
 	bottom: 5px;
 	left: 0;
-	filter: drop-shadow(0 0 3px rgba(0,0,0,1))
+	filter: drop-shadow(0 0 3px rgba(0,0,0,1));
+	display: flex;
+	flex-direction: column;
 }
 
 section.about-me .flex-container .sect1 .name-text .big {
@@ -316,6 +335,11 @@ section.about-me .flex-container .sect1 .name-text .smaller {
 	font-weight: 700;
 	color: rgb(200,200,200);
 	font-family: "Be Vietnam Pro", sans-serif;
+}
+
+section.about-me .flex-container .sect1 .name-text .extra {
+	margin: 0;
+	font-weight: 700;
 }
 
 section.about-me .flex-container .sect1 .tinyguy-img {
@@ -350,7 +374,7 @@ section.about-me .flex-container .sect2 .abm-countries img {
 
 section.about-me .flex-container .sect2 .abm-cl {
 	padding: 5px;
-	background: rgb(25,25,25);
+	background: rgb(20,20,20);
 	border-radius: 5px;
 	display: inline-flex;
 	gap: 5px;
@@ -358,6 +382,62 @@ section.about-me .flex-container .sect2 .abm-cl {
 	width: min-content;
 	text-wrap: nowrap;
 	margin-block: 5px;
+}
+
+@media screen and (max-width: 750px) {
+	section.about-me {
+		width: calc(100% - 70px);
+	}
+}
+
+@media screen and (max-width: 590px) {
+	section.about-me {
+		min-height: 0;
+		min-height: max-content;
+	}
+	section.about-me .flex-container {
+		flex-direction: column;
+		height: max-content;
+	}
+	section.about-me .flex-container .sect1 {
+		width: 100%;
+		min-height: 150px;
+	}
+	section.about-me .flex-container .sect1 .bust-img {
+		object-position: top right;
+		position: absolute;
+		top: -90%;
+		right: 10%;
+		height: 190%;
+		width: 340px;
+	}
+	section.about-me .flex-container .sect1 .tinyguy-img {
+		right: -50px;
+		height: 130%;
+		filter: drop-shadow(0 0 2px rgba(0,0,0,0.5));
+	}
+	section.about-me .flex-container .sect1 h1 {
+		bottom: 25%;
+		z-index: 2;
+		font-size: 1.2rem;
+		color: rgb(200,200,200)
+	}
+	section.about-me .flex-container .sect1 .name-text {
+		flex-direction: row;
+		align-items: flex-end;
+		width: 290px;
+		flex-wrap: wrap;
+	}
+	section.about-me .flex-container .sect1 .name-text .big {
+		font-size: 1.7rem;
+	}
+	section.about-me .flex-container .sect1 .name-text .smaller {
+		margin-left: 10px;
+		margin-bottom: 2px;
+	}
+	section.about-me .flex-container .sect2 {
+		width: 100%;
+	}
 }
 
 section.socials .flex {
@@ -384,7 +464,7 @@ section.socials .flex .item {
 	align-items: center;
 	gap: 20px;
 	background: rgb(15,15,15);
-	border: 1px solid rgba(255,255,255,0.1);
+	border: none;
 	border-radius: 6px;
 	cursor: pointer;
 	transition: scale 0.3s cubic-bezier(0,1,1,1), outline 0.6s cubic-bezier(0,1,1,1), outline-offset 0.6s cubic-bezier(0,1,1,1);
@@ -431,7 +511,6 @@ section.socials .flex .item .social-img {
 
 section.socials .flex .item .text {
 	text-wrap: nowrap;
-	font-family: "Fredoka";
 	font-size: 1.3rem;
 	margin: 0;
 	padding: 0;
